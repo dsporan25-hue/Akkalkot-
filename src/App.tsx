@@ -16,7 +16,8 @@ import {
   HardDrive,
   Copy,
   Check,
-  RotateCcw
+  RotateCcw,
+  Youtube
 } from 'lucide-react';
 import { Display } from './components/Display';
 import { Keypad } from './components/Keypad';
@@ -24,6 +25,7 @@ import { FileManager } from './components/FileManager';
 import { SettingsModal } from './components/SettingsModal';
 import { CalculusPanel } from './components/CalculusPanel';
 import { ConverterPanel } from './components/ConverterPanel';
+import { PeaceMediaModal } from './components/PeaceMediaModal';
 import { PWAInstallButton } from './components/PWAInstallButton';
 import { MathEngine } from './services/mathEngine';
 import {
@@ -63,6 +65,7 @@ export default function App() {
   const [showSettings, setShowSettings] = useState(false);
   const [showCalculus, setShowCalculus] = useState(false);
   const [showConverter, setShowConverter] = useState(false);
+  const [showPeaceMedia, setShowPeaceMedia] = useState(false);
 
   // Daily file count badge
   const [todayRecordCount, setTodayRecordCount] = useState(0);
@@ -386,8 +389,8 @@ export default function App() {
 
       {/* Main Handheld Physical-Inspired Calculator Container */}
       <main className="w-full max-w-md mx-auto my-auto flex flex-col gap-3 py-2">
-        {/* Mode Quick Toolbar: Tools for Calculus & Unit/Currency Converters */}
-        <div className="flex items-center justify-between gap-1.5 px-1">
+        {/* Mode Quick Toolbar: Tools for Calculus, Unit/Currency Converters & Peace Media */}
+        <div className="flex flex-col gap-1.5 px-1">
           <div className="flex items-center gap-1.5 flex-1">
             <button
               type="button"
@@ -407,6 +410,16 @@ export default function App() {
               <span>{t.unitConverter} / Forex</span>
             </button>
           </div>
+
+          {/* Dedicated Peace & YouTube Media Button requested by user */}
+          <button
+            type="button"
+            onClick={() => setShowPeaceMedia(true)}
+            className="w-full py-1.5 px-3 rounded-xl bg-gradient-to-r from-red-950/30 via-slate-900 to-cyan-950/30 hover:from-red-900/40 hover:to-cyan-900/40 border border-slate-800 hover:border-cyan-500/50 text-slate-200 hover:text-white text-xs font-semibold flex items-center justify-center gap-2 transition-all shadow-sm active:scale-98"
+          >
+            <Youtube className="w-4 h-4 text-red-500" />
+            <span>{settings.language === 'bn' ? 'ঠাকুরের শান্তি ও সাঈদীর বয়ান (ইউটিউব)' : 'Peace Chants & Sayedee Waz (YouTube)'}</span>
+          </button>
         </div>
 
         {/* Real Physical-Feel Calculator Body */}
@@ -505,6 +518,13 @@ export default function App() {
         }}
         lang={settings.language}
         autoSave={settings.autoSave}
+      />
+
+      {/* Peace & Spiritual YouTube Media Modal (ঠাকুরের শান্তি ও সাঈদীর বয়ান) */}
+      <PeaceMediaModal
+        isOpen={showPeaceMedia}
+        onClose={() => setShowPeaceMedia(false)}
+        lang={settings.language}
       />
     </div>
   );
