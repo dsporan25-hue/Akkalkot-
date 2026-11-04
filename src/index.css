@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Outfit', 'Hind Siliguri', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-bengali: 'Hind Siliguri', 'Outfit', sans-serif;
+}
+
+:root {
+  --app-bg: #070b14;
+  --card-bg: #0d1527;
+  --accent-cyan: #00f0ff;
+  --accent-blue: #0284c7;
+}
+
+/* Theme definitions */
+html.theme-dark {
+  --app-bg: #060a12;
+  --calc-body: #0a1120;
+  --calc-keypad: #080d19;
+  --btn-num: #131c31;
+  --btn-num-hover: #1c2944;
+  --btn-num-text: #f1f5f9;
+  --btn-op: #192744;
+  --btn-op-hover: #23365d;
+  --btn-op-text: #38bdf8;
+  --btn-fn: #162035;
+  --btn-fn-hover: #1f2d4a;
+  --btn-fn-text: #94a3b8;
+  --btn-equal: #00d2ee;
+  --btn-equal-text: #02121f;
+  --display-text: #ffffff;
+  --display-sub: #7dd3fc;
+  --border-color: #1a2744;
+}
+
+html.theme-neon {
+  --app-bg: #030408;
+  --calc-body: #070a14;
+  --calc-keypad: #04060d;
+  --btn-num: #091325;
+  --btn-num-hover: #0f1f3d;
+  --btn-num-text: #e0f2fe;
+  --btn-op: #0a2540;
+  --btn-op-hover: #103b66;
+  --btn-op-text: #00f0ff;
+  --btn-fn: #111a30;
+  --btn-fn-hover: #1b294b;
+  --btn-fn-text: #38bdf8;
+  --btn-equal: #00f0ff;
+  --btn-equal-text: #000000;
+  --display-text: #00f0ff;
+  --display-sub: #38bdf8;
+  --border-color: #00e5ff33;
+}
+
+html.theme-light {
+  --app-bg: #f0f4f9;
+  --calc-body: #ffffff;
+  --calc-keypad: #f8fafc;
+  --btn-num: #ffffff;
+  --btn-num-hover: #f1f5f9;
+  --btn-num-text: #0f172a;
+  --btn-op: #e0f2fe;
+  --btn-op-hover: #bae6fd;
+  --btn-op-text: #0284c7;
+  --btn-fn: #f1f5f9;
+  --btn-fn-hover: #e2e8f0;
+  --btn-fn-text: #475569;
+  --btn-equal: #0284c7;
+  --btn-equal-text: #ffffff;
+  --display-text: #0f172a;
+  --display-sub: #0369a1;
+  --border-color: #e2e8f0;
+}
+
+/* Custom button press feel */
+.calc-press {
+  transform: translateY(0);
+  transition: transform 0.08s ease, filter 0.08s ease;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.calc-press:active {
+  transform: translateY(2px) scale(0.97);
+  filter: brightness(1.2);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.5);
+}
+
+/* Print export formatting */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}

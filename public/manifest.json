@@ -1,0 +1,27 @@
+{
+  "id": "/",
+  "name": "Poran Smart Calculator",
+  "short_name": "PoranCalc",
+  "description": "Premium Android-ready smart calculator with automatic daily calculation file manager, scientific tools, unit & currency converters, and persistent settings.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#070b14",
+  "theme_color": "#0a0f1d",
+  "categories": ["utilities", "productivity", "finance"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ]
+}

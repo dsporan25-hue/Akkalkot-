@@ -1,0 +1,6 @@
+{
+  "name": "Poran Smart Calculator",
+  "description": "Premium Android-ready smart calculator with automatic daily calculation file manager, scientific & calculus tools, unit & currency converter, and persistent settings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
